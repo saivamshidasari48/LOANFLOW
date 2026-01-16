@@ -23,7 +23,7 @@ import bg from "../assets/login-bg1.jpg";
  */
 export default function CustomerDashboard() {
   const nav = useNavigate();
-  const { username, role } = getAuth();
+  const { username} = getAuth();
 
   // Normalizes role format in case backend ever returns "ROLE_CUSTOMER" style values
   //const displayRole = (role || "").toUpperCase().replace("ROLE_", "");
