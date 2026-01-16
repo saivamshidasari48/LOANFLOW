@@ -103,7 +103,12 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // Frontend origin allowed to access backend APIs
-        config.setAllowedOrigins(List.of("http://localhost:3000"));
+        config.setAllowedOriginPatterns(List.of(
+        "http://localhost:3000",
+        "https://loanflow-k5zk.vercel.app",
+        "https://*.vercel.app"
+));
+
 
         // HTTP methods allowed for cross-origin requests
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
