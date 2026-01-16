@@ -102,27 +102,19 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Frontend origin allowed to access backend APIs
         config.setAllowedOriginPatterns(List.of(
-        "http://localhost:3000",
-        "https://loanflow-k5zk.vercel.app",
-        "https://*.vercel.app"
-));
+                "http://localhost:3000",
+                "https://loanflow-k5zk.vercel.app",
+                "https://*.vercel.app"
+        ));
 
-
-        // HTTP methods allowed for cross-origin requests
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-
-        // Headers allowed in cross-origin requests
-        config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
-
-        // Allows cookies / authorization headers to be sent
+        config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
 
-        // Apply CORS configuration to all API paths
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
-
         return source;
     }
+
 }
