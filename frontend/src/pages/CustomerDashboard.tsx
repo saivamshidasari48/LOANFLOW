@@ -26,7 +26,7 @@ export default function CustomerDashboard() {
   const { username, role } = getAuth();
 
   // Normalizes role format in case backend ever returns "ROLE_CUSTOMER" style values
-  const displayRole = (role || "").toUpperCase().replace("ROLE_", "");
+  //const displayRole = (role || "").toUpperCase().replace("ROLE_", "");
 
   return (
     <Box
